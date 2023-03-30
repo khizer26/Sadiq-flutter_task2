@@ -13,8 +13,7 @@ class UpdateLocationPage extends StatefulWidget {
 
 class _UpdateLocationPageState extends State<UpdateLocationPage> {
   final databaseReference =
-      // ignore: deprecated_member_use
-      FirebaseDatabase.instance.reference().child('users').child('user_id');
+      FirebaseDatabase.instance.ref().child('users').child('user_id');
   Position? _currentPosition;
 
   @override
