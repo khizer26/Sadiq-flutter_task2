@@ -1,5 +1,6 @@
+//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_database/firebase_database.dart';
-//import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -12,22 +13,30 @@ class UpdateLocationPage extends StatefulWidget {
 }
 
 class _UpdateLocationPageState extends State<UpdateLocationPage> {
-  final databaseReference =
-      FirebaseDatabase.instance.ref().child('users').child('user_id');
+  final databaseReference = FirebaseDatabase.instance.ref('location');
   Position? _currentPosition;
 
   @override
   void initState() {
     super.initState();
-    _getCurrentLocation();
+    _updateLocation();
   }
 
   // Get the user's current location
-  _getCurrentLocation() async {
-    Position position = await Geolocator.getCurrentPosition(
+  Future<Position> _getCurrentLocation() async {
+    return await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
+  }
+
+  // Update the user's location in the database
+  _updateLocation() async {
+    Position position = await _getCurrentLocation();
     setState(() {
       _currentPosition = position;
+    });
+    databaseReference.child('1').set({
+      'latitude': _currentPosition!.latitude,
+      'longitude': _currentPosition!.longitude,
     });
   }
 

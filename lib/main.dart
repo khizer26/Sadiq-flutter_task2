@@ -145,16 +145,16 @@ class MyHomePage extends StatelessWidget {
             const SizedBox(
               height: 20.0,
             ),
-            FloatingActionButton(
-                onPressed: () async {
-                  await FirebaseAnalytics.instance.logEvent(
-                    name: 'location_pressed',
-                  );
-                  // ignore: use_build_context_synchronously
-                  context.go('/location');
-                },
-                child: const Text("Location",
-                    style: TextStyle(color: Colors.white, fontSize: 10)))
+            IconButton(
+              icon: const Icon(Icons.location_on, color: Colors.blue),
+              onPressed: () async {
+                await FirebaseAnalytics.instance.logEvent(
+                  name: 'location_pressed',
+                );
+                // ignore: use_build_context_synchronously
+                context.go('/location');
+              },
+            )
           ],
         ),
       ),

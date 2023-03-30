@@ -44,7 +44,7 @@ dependencies:
   permission_handler: ^10.2.0
   geolocator: ^9.0.2
   firebase_database: ^10.0.16
-  geocoding: ^2.1.0
+  
 
 dev_dependencies:
   flutter_test:
