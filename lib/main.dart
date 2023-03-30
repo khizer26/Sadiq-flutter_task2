@@ -5,6 +5,8 @@ import 'package:flutter_task2/dashboard.dart';
 import 'package:flutter_task2/log.dart';
 import 'package:flutter_task2/profile.dart';
 import 'package:flutter_task2/search.dart';
+import 'package:flutter_task2/userinfo.dart';
+//import 'package:flutter_task2/userinfo.dart';
 //import 'package:geolocator/geolocator.dart';
 import 'package:go_router/go_router.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -69,6 +71,10 @@ class MyApp extends StatelessWidget {
       GoRoute(
         path: '/location',
         builder: (context, state) => const UpdateLocationPage(),
+      ),
+      GoRoute(
+        path: '/userinfo',
+        builder: (context, state) => const UserInfo(),
       )
     ],
   );
@@ -154,6 +160,15 @@ class MyHomePage extends StatelessWidget {
                 // ignore: use_build_context_synchronously
                 context.go('/location');
               },
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                context.go('/userinfo');
+              },
+              child: const Text('User Info'),
             )
           ],
         ),

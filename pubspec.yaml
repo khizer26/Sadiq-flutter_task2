@@ -44,6 +44,11 @@ dependencies:
   permission_handler: ^10.2.0
   geolocator: ^9.0.2
   firebase_database: ^10.0.16
+  device_info_plus: ^8.1.0
+  http: ^0.13.5
+  imei: ^0.0.1
+  imei_plugin: ^1.2.0
+  universal_io: ^2.2.0
   
 
 dev_dependencies:
@@ -56,6 +61,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  dev: ^1.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

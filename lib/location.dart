@@ -68,6 +68,7 @@ class _UpdateLocationPageState extends State<UpdateLocationPage> {
                   Text('Latitude: ${_currentPosition!.latitude}'),
                   Text('Longitude: ${_currentPosition!.longitude}'),
                   const SizedBox(height: 20),
+                  const Text('Location updated on firebase')
                 ],
               )
             : const CircularProgressIndicator(),
